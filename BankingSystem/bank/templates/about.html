@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+	Aboutus
+{% endblock %}
+{% block style %}
+<style>
+#about
+{
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.left_con
+{
+    border: 2px solid #4661ac;
+    background-color: #929292;
+    color: #fff;
+	border-radius: 20px;
+}
+.content_about
+{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+ul {
+	list-style-type: circle;
+}
+li
+{
+	margin-bottom: 15px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div id="about" class="container">
+	<div class="row flex-center">
+		<div class="col-md-6 col-lg-6">
+			<img src="{% static 'images/aboutimg.png' %}" alt="" class="img-fluid m-b-15" data-aos="fade-up">
+		</div>
+		<div class="col-md-6 col-lg-5 offset-lg-1">
+			<div class="left_con">
+				<div class="content_about">
+					<ul>
+						<li>This is a simple dynamic website which has the following specs.</li>
+						<li>Has a dummy data in database for upto 10 
+							customers. Database options: Mysql, Mongo, Postgres, etc. 
+							Customers table will have basic fields such as name, email, 
+							current balance etc. Transfers table will record all transfers 
+							happened.</li>
+						<li>Flow: Home Page > View all Customers > Select and View one 
+							Customer > Transfer Money > Select customer to transfer to > 
+							View all Customers .</li>
+						<li>No Login Page. No User Creation. Only transfer of money 
+							between multiple users. </li>
+						<li>Host the website at 000webhost, github.io, heroku app or any 
+							other free hosting provider. Check in code in gitlab.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,122 @@
+.top {
+    padding-top: 50px;
+}
+
+.imageback {
+    background-color: rgb(11, 161, 248);
+    height: 475px;
+    width: 475px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.imageback img {
+    padding-top: 50px;
+}
+
+.textright {
+    margin-top: 200px;
+}
+
+.textrightTopDown {
+    margin-left: 35%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.textrightTop {
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.specialTextOnline {
+    /* background-color: linear-gradient(#F60303, #F009F4); */
+    background: -webkit-linear-gradient(rgb(26, 1, 248), #f40928);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 45px;
+}
+
+.card {
+    width: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+    .row {
+        display: inline-block;
+    }
+
+    .textright {
+        margin-top: 10px;
+        width: 350px;
+        margin-left: 20px;
+    }
+
+    .top {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .imageback {
+        height: 115%;
+        width: 95%;
+        margin: auto;
+        border-radius: 20px;
+    }
+
+    .textright {
+        width: 95%;
+        margin: auto;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .specialTextOnline {
+        font-size: 30px;
+    }
+}
+
+.displaycards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media(max-width: 845px) {
+    .displaycards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 400px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
+
+.cardimage {
+    margin-top: 10px;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.anchor
+{
+    text-decoration: none;
+    color: #fff;
+}

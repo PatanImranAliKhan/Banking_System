@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Customer Details
+{% endblock %}
+{% block style %}
+<style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
+	background: #f9f9f9;
+	font-family: "Roboto", sans-serif;
+}
+
+.main-content {
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+.user-info {
+	display: flex;
+	align-items: center;
+}
+
+.card
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+.user-info__img img {
+	margin-right: 15px;
+	height: 55px;
+	width: 55px;
+	border-radius: 45px;
+	border: 3px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h6
+{
+    margin-bottom: 5px;
+}
+#search
+{
+    border-radius: 5px 0px 0px 5px;
+    height: 40px;
+}
+.searchbut
+{
+	width: 65px;
+    background-color: rgb(191, 204, 204);
+    border: 1px solid orange;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.anchor
+{
+    text-decoration: none;
+    color: #fff;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-md-6 offset-md-3 mt-5">
+        <form class="input-group mb-3" action="" method="POST">
+            {% csrf_token %}
+            <input type="text" class="form-control" id="search" name="search" placeholder="search">
+            <div class="input-group-append">
+                <button class="searchbut" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    {% if error %}
+		<div class="alert alert-danger" role="alert">
+			{{error}}
+		</div>
+    {% endif %}
+    <div class="row main-content">
+        {% for customer in customers%}
+        <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="card bg-white p-3 mb-4 shadow">
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="user-info">
+                        <div class="user-info__img">
+                            <img src="{% static 'images/avatar.png' %}" alt="profile">
+                        </div>
+                        <div class="user-info__basic">
+                            <h5 class="mb-0">{{customer.username}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="mb-0"><b>Email: </b><br>
+                    &emsp;&emsp;{{customer.email}}</h6>
+                <h6 class="mb-0"><b>Balance: </b><br>
+                    &emsp;&emsp;{{customer.balance}}</h6>
+                <h6 class="mb-0"><b>Account Number: </b><br>
+                    &emsp;&emsp;{{customer.Accnumber}}</h6>
+                <div class="d-flex justify-content-between mt-4">
+                    <button class="btn btn-primary"><a href="{% url 'deposituser' customer.Accnumber %}" class="anchor">Deposit</a></button>
+                    <button class="btn btn-warning"><a href="{% url 'addmoneyacc' customer.Accnumber %}" class="anchor">Add Money</a></button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+{% endblock %}

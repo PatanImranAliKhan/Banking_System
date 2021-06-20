@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Spark bank
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div>
+        <div class="top">
+            <div class="row flex-center">
+                <div class="col-md-6 col-lg-6">
+                    <div class="imageback">
+                        <img src="{% static 'images/bank.png' %}" alt="" class="img-fluid m-b-15" data-aos="fade-up">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 offset-lg-1">
+                    <div class="textright">
+                        <span class="textrightTop"> <span class="specialTextOnline">Transfer Money</span></span><br>
+                        <span><span class="textrightTopDown">...feel secure</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div>
+        <div class="displaycards">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="cardimage">
+                        <img class="d-flex justify-content-center" style="border: 2px solid blue; margin: auto;" width="95%" height="225"
+                            src="{% static 'images/register.png' %}" alt="all customers">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-heading" style="font-weight: bold;">Add Details</h5>
+                        <p class="card-text">Add your details and by that you can be part of the transactions.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-md btn-primary">
+                                <a style="text-decoration: none;color: #fff;" href="{% url 'join' %}">View</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="cardimage">
+                        <img class="d-flex justify-content-center" style="border: 2px solid blue; margin: auto;" width="95%" height="225"
+                            src="{% static 'images/details.png' %}" alt="all customers">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-heading" style="font-weight: bold;">View Customers Details</h5>
+                        <p class="card-text">display all customer details --> username, email and balance.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-md btn-primary">
+                                <a style="text-decoration: none;color: #fff;" href="{% url 'cusdetails' %}">View</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="cardimage">
+                        <img class="d-flex justify-content-center" style="border: 2px solid blue; margin: auto;" width="95%" height="225"
+                            src="{% static 'images/transfer.png' %}" alt="tranfermoney">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-heading" style="font-weight: bold;">Deposit Money</h5>
+                        <p class="card-text">Transfer the amount to the respected person with account number.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-md btn-primary">
+                                <a style="text-decoration: none;color: #fff;" href="{% url 'deposit' %}">View</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="cardimage">
+                        <img class="d-flex justify-content-center" style="border: 2px solid blue; margin: auto;" width="95%" height="225"
+                            src="{% static 'images/history.png' %}" alt="alltransactions">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-heading" style="font-weight: bold;">History Of Transactions</h5>
+                        <p class="card-text">Check all the transaction with the sender details and receiver details</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-md btn-primary">
+                                <a style="text-decoration: none;color: #fff;" href="{% url 'history' %}">View</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+</div>
+
+{% endblock %}

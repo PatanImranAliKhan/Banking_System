@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+html 
+{
+    scroll-behavior: smooth;
+}
+
+body 
+{
+    font-family: "Roboto", sans-serif;
+    background-color: #e2d7d7;
+}
+  
+#navbar
+{
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background-color: rgb(11, 161, 248);
+}
+  
+#navbar .navbar-toggler-icon
+{
+    padding: 4px;
+}
+
+.logo
+{
+    font-family: "Script MT";
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+}
+  
+#navbar .nav-link,
+#navbar .navbar-toggler-icon i
+{
+    color: #000;
+}
+  
+#navbar .nav-link.btn
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.fixed
+{
+    position: fixed;
+}
+  
+#navbar.fixed
+{
+    -webkit-box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item
+{
+    margin: 0 8px;
+}
+  
+#navbar.fixed .nav-link,
+#navbar.fixed .navbar-toggler-icon i
+{
+    color: #000;
+}
+  
+#navbar.fixed .nav-link.btn
+{
+    color: #000;
+}
+
+.nav-link:hover
+{
+    background-color: rgb(182, 163, 163);
+}
